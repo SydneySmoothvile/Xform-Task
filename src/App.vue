@@ -6,7 +6,7 @@
     <pre>{{ myObject2 }}</pre>
     <XForm v-model="myObject3" :fields="myFields3" />
     <pre>{{ myObject3 }}</pre>
-    <XForm v-bind:fields="myfields1" />
+    <!-- <XForm v-bind:fields="myfields1" /> -->
   </div>
 </template>
 
