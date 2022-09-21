@@ -5,14 +5,17 @@
       v-for="field in fields"
       :key="fields.field"
       v-bind:fields="fields.field"
+      {{
+      fields.component
+      }}
     />
 
-    <div>
-      My Input:
-      <input v-model="inputVal" />
-    </div>
+    {{ fields.component }}
+  </div>
 
-    {{ field.component }}
+  <div>
+    My Input:
+    <input v-model="inputVal" />
   </div>
 
   <input type="text" :value="myObject1" />
