@@ -5,20 +5,25 @@
       v-for="field in fields"
       :key="fields.field"
       v-bind:fields="fields.field"
-      {{
-      fields.component
-      }}
     />
 
     {{ fields.component }}
   </div>
 
-  <div>
+  <li v-for="item in items" :key="item.message">
+    {{ item.message }}
+  </li>
+
+  <div v-for="object1 in myObject1">
     My Input:
     <input v-model="inputVal" />
   </div>
 
-  <input type="text" :value="myObject1" />
+  <div v-for="object1 in myObject1">
+        {{object1.name}}
+      </div>
+
+  <input type="text" :fields="myObject1" />
 </template>
 
 <script>
@@ -27,7 +32,7 @@ export default {
   computed: {
     inputVal: {
       get() {
-        return this.value;
+        return this.fields;
       },
       set(val) {
         this.$emit('input', val);
